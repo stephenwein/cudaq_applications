@@ -1,0 +1,43 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual envs & local tooling
+.venv/
+venv/
+.env
+.python-version
+
+# Build & packaging
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+.wheelhouse/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# CUDA-Q / logs (optional—uncomment if useful)
+# cudaq-*.log
+# *.ncu-rep
+# *.nsys-rep
