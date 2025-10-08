@@ -18,11 +18,11 @@ sigma_list = np.linspace(0, 0.3, 30)
 
 t0 = time.time()
 for sigma in tqdm.tqdm(sigma_list):
-    trion = Trion(oh_sigma=sigma, n_samples=200)
+    trion = Trion(oh_sigma=sigma, n_samples=100)
     zpg = ZPG(n_emitters=2, unitary=CyclicInterferometer(2).compute_unitary(), n_trunc=2)
-    timing = Timing(t_initial=0.0, t_final=7.0, steps=20)
+    timing = Timing(t_initial=0.0, t_final=5.0)
 
-    choi_list.append(compute_chois_pnr(trion, zpg, timing))
+    choi_list.append(compute_chois_pnr(trion, zpg, timing,integrator=RungeKuttaIntegrator(order=2, max_step_size=1)))
 simulation_time = time.time() - t0
 print('Simulation time: ', simulation_time)
 
