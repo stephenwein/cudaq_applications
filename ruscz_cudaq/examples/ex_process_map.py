@@ -4,7 +4,7 @@ import time
 import tqdm
 from rus_trion.evolve import compute_chois_pnr
 from rus_trion.config import ZPG, Timing, CyclicInterferometer, Trion
-
+from cudaq import RungeKuttaIntegrator
 
 ## Compute target matrices
 trion = Trion()
