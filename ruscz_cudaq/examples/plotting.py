@@ -38,6 +38,8 @@ pauli_errors = np.array(pauli_errors).transpose()
 for lb, dat in zip(a[1:], pauli_errors[1:]):
     plt.plot(sigmas, dat, label=lb)
 plt.legend()
+plt.xlabel("Overhauser field strength, $\sigma_{OH}/\gamma$")
+plt.ylabel("Stohastic pauli error")
 
 plt.savefig("pauli.png")
 
@@ -53,4 +55,4 @@ chi_err[0,0] = 0
 chi_err = qt.Qobj(chi_err, dims=[[[2, 2], [2, 2]], [[2, 2], [2, 2]]], superrep='chi')
 
 qt.qpt_plot_combined(chi_err / chi_err.tr(), lbls_list=[['i', 'x', 'y', 'z']] * 2)
-plt.savefig("chi_matrix.png")
+plt.savefig("chi_err_matrix.png")
